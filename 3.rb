@@ -11,18 +11,12 @@
 ## Решение:
 filename = "data/3.txt"
 fh = open filename
-max=0
-min=1000000
-ar2=[]
+res=0
 
 while line=fh.gets
-	ar=line.split
-	ar2.push(ar.max.to_i-ar.min.to_i)
-end
-
-res=0
-for i in 0..ar2.length
-	res=res+ar2[i].to_i
+	ar=line.split("\t")
+	raznica=ar.max.to_i+ar.min.to_i
+	res=res+raznica
 end
 
 puts "#{res}"
