@@ -16,6 +16,18 @@
 #
 ## Решение:
 
+filename = "data/1.txt"
+fh = open filename
+floor=0
+way = fh.read
 
+for i in 0..way.length
+	if way[i]=="("
+		floor=floor+1
+	elsif way[i]==")"
+		floor=floor-1
+	else puts "Not approved"
+	end
+end
 
-
+puts "#{floor}"

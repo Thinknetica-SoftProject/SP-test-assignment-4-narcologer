@@ -15,4 +15,20 @@
 #
 #
 ## Решение:
+require 'digest'
 
+num =1;
+ask=0;
+s = gets.chomp
+
+while ask==0 do
+	s2=s+num.to_s(10)
+	s3=Digest::SHA256.hexdigest s2
+	s4 = s3[0..4]
+	if s4=="00000"
+		ask=1
+	else num+=1
+	end
+end
+
+puts "#{num}"

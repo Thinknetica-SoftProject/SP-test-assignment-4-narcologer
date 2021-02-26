@@ -15,5 +15,25 @@
 #
 #
 ## Решение:
+def formula(sh,v,d)
+return 2*sh*d+2*d*v+2*v*sh
+end
+
+filename = "data/4.txt"
+fh = open filename
+res=0
+while line=fh.gets
+	ar=line.split("x")
+	shirina=ar.max.to_i
+	dlina=ar.min.to_i
+	visota=0
+	for i in 0..ar.length
+		if ar[i].to_i>dlina && ar[i].to_i < shirina
+			visota=ar[i].to_i
+		end
+	end
+	res=res+formula(shirina,visota,dlina)
+end
 
 
+puts "#{res}"
