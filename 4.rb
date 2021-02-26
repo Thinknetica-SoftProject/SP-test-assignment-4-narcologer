@@ -15,8 +15,8 @@
 #
 #
 ## Решение:
-def formula(sh,v,d)
-return 2*sh*d+2*d*v+2*v*sh
+def formula(dl,vi,sh)
+return 2*dl*sh + 2*sh*vi + 2*vi*dl+dl*vi
 end
 
 li=File.read("data/4.txt").split("\n")
@@ -24,10 +24,10 @@ res=0
 
 li.each do |line|
 	ar=line.split("x").map(&:to_i).sort
-	shirina=ar.max
-	dlina=ar.min
-	visota=ar[1]
-	res=res+formula(shirina,visota,dlina)
+	dl=ar[0]
+	vi=ar[1]
+	sh=ar[2]
+	res=res+formula(dl,vi,sh)
 end
 
 
