@@ -9,13 +9,12 @@
 # - Результат должен быть выведен в консоль командой puts
 #
 ## Решение:
-filename = "data/3.txt"
-fh = open filename
+li=File.read("data/3.txt").split("\n")
 res=0
 
-while line=fh.gets
-	ar=line.split("\t")
-	raznica=ar.max.to_i+ar.min.to_i
+li.each do |line|
+	ar=line.split("\t").map(&:to_i)
+	raznica=ar.max-ar.min
 	res=res+raznica
 end
 
